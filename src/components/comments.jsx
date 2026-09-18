@@ -14,16 +14,19 @@ export default function Comments({ comments }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch(`http://localhost:8080/posts/${id}/comments`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("token")}`,
+    const response = await fetch(
+      `https://blog-api-ljzu.onrender.com/posts/${id}/comments`,
+      {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          comment,
+        }),
       },
-      body: JSON.stringify({
-        comment,
-      }),
-    });
+    );
 
     const data = await response.json();
     if (!response.ok)

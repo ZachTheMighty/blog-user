@@ -10,7 +10,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:8080/tokens",
+      "https://blog-api-ljzu.onrender.com/tokens",
       {
         method: "get",
         headers: {
@@ -30,7 +30,7 @@ export default function Dashboard() {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
 
-    fetch("http://localhost:8080/posts")
+    fetch("https://blog-api-ljzu.onrender.com/posts")
       .then((response) => response.json())
       .then((data) => setPosts(data.filter((item) => item.published)))
       .catch((error) => console.log(error))
