@@ -39,7 +39,7 @@ export default function Login() {
         onSubmit={(event) => handleSubmit(event)}
         className="flex flex-col gap-4 px-8 py-16 rounded-md bg-white sm:p-16 w-full md:w-150 lg:w-200"
       >
-        <h1 className="text-3xl text-center mb-8 text-gray-600">Login</h1>
+        <h1 className="text-3xl text-center mb-8 text-gray-600">Login As A User</h1>
         <Input type="email" value={email} setValue={setEmail} errors={errors} />
         <Input
           type="password"
